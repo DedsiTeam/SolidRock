@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{BC04B74F-7CAC-4ACC-BFD9-6DED68564777}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolidRock.Host", "host\SolidRock.Host\SolidRock.Host.csproj", "{69FBA34B-8170-4669-B52B-7E23008FCBE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{742C963C-D969-4A33-9890-56ED35C7CE93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolidRockIdentity", "SolidRockIdentity", "{89D19068-E6E8-4B20-BBCE-12ABA01E6879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRockIdentity.Domain", "modules\SolidRockIdentity\SolidRockIdentity.Domain\SolidRockIdentity.Domain.csproj", "{A32AF4CB-797D-4D3E-81C9-C7A3F7BB0EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRockIdentity.HttpApi", "modules\SolidRockIdentity\SolidRockIdentity.HttpApi\SolidRockIdentity.HttpApi.csproj", "{A8D5F2B9-701B-4972-8FC1-5C14E59039ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRockIdentity.UseCase", "modules\SolidRockIdentity\SolidRockIdentity.UseCase\SolidRockIdentity.UseCase.csproj", "{FEE37737-C3B9-4F50-85F9-5F09AA15D68E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidRockIdentity.Infrastructure", "modules\SolidRockIdentity\SolidRockIdentity.Infrastructure\SolidRockIdentity.Infrastructure.csproj", "{DE375FD5-D211-4E60-BA53-D006323E5823}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69FBA34B-8170-4669-B52B-7E23008FCBE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FBA34B-8170-4669-B52B-7E23008FCBE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FBA34B-8170-4669-B52B-7E23008FCBE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FBA34B-8170-4669-B52B-7E23008FCBE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32AF4CB-797D-4D3E-81C9-C7A3F7BB0EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32AF4CB-797D-4D3E-81C9-C7A3F7BB0EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32AF4CB-797D-4D3E-81C9-C7A3F7BB0EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32AF4CB-797D-4D3E-81C9-C7A3F7BB0EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8D5F2B9-701B-4972-8FC1-5C14E59039ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D5F2B9-701B-4972-8FC1-5C14E59039ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D5F2B9-701B-4972-8FC1-5C14E59039ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D5F2B9-701B-4972-8FC1-5C14E59039ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEE37737-C3B9-4F50-85F9-5F09AA15D68E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE37737-C3B9-4F50-85F9-5F09AA15D68E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEE37737-C3B9-4F50-85F9-5F09AA15D68E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE37737-C3B9-4F50-85F9-5F09AA15D68E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE375FD5-D211-4E60-BA53-D006323E5823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE375FD5-D211-4E60-BA53-D006323E5823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE375FD5-D211-4E60-BA53-D006323E5823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE375FD5-D211-4E60-BA53-D006323E5823}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69FBA34B-8170-4669-B52B-7E23008FCBE5} = {BC04B74F-7CAC-4ACC-BFD9-6DED68564777}
+		{89D19068-E6E8-4B20-BBCE-12ABA01E6879} = {742C963C-D969-4A33-9890-56ED35C7CE93}
+		{A32AF4CB-797D-4D3E-81C9-C7A3F7BB0EDF} = {89D19068-E6E8-4B20-BBCE-12ABA01E6879}
+		{A8D5F2B9-701B-4972-8FC1-5C14E59039ED} = {89D19068-E6E8-4B20-BBCE-12ABA01E6879}
+		{FEE37737-C3B9-4F50-85F9-5F09AA15D68E} = {89D19068-E6E8-4B20-BBCE-12ABA01E6879}
+		{DE375FD5-D211-4E60-BA53-D006323E5823} = {89D19068-E6E8-4B20-BBCE-12ABA01E6879}
+	EndGlobalSection
+EndGlobal

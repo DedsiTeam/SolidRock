@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>SolidRock</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
+        
+        <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpFrameworkVersion)" />
+        <PackageReference Include="Volo.Abp.Autofac" Version="$(AbpFrameworkVersion)" />
+        <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpFrameworkVersion)" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpFrameworkVersion)" />
+
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+        <PackageReference Include="Serilog.Sinks.Async" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Logs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\modules\SolidRockIdentity\SolidRockIdentity.HttpApi\SolidRockIdentity.HttpApi.csproj" />
+    </ItemGroup>
+
+</Project>
