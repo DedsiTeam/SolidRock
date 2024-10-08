@@ -1,6 +1,5 @@
 ﻿using Dedsi.CleanArchitecture.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
-using SolidRockIdentity.Emails;
 using SolidRockIdentity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -18,8 +17,5 @@ public class SolidRockIdentityInfrastructureModule : AbpModule
         {
             options.AddDefaultRepositories(true);
         });
-
-        // 测试发送邮件
-        context.Services.AddTransient<IEmailSender, TestEmailSender>();
     }
 }

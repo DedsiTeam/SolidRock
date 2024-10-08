@@ -1,32 +1,26 @@
-﻿using Volo.Abp;
-using Volo.Abp.Domain.Entities;
+﻿using Volo.Abp.Domain.Entities.Auditing;
 
 namespace SolidRockIdentity.Roles;
 
-public class Role : AggregateRoot<Guid>
+/// <summary>
+/// 角色
+/// </summary>
+public class Role : FullAuditedAggregateRoot<Guid>
 {
     public Role() { }
-
-    public Role(Guid id, string roleCode, string roleName) : base(id)
-    {
-        RoleCode = roleCode;
-        RoleName = roleName;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public string RoleCode { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
     public string RoleName { get; set; }
     
-
-    public void Update(string roleCode, string roleName)
-    {
-        RoleCode = Check.NotNullOrWhiteSpace(roleCode, nameof(roleCode));
-        RoleName = Check.NotNullOrWhiteSpace(roleName, nameof(roleName));
-    }
+    /// <summary>
+    /// 
+    /// </summary>
+    public string Remark { get; private set; }
+    
+    /// <summary>
+    /// 角色 的 权限
+    /// </summary>
+    public ICollection<RolePermission> RolePermissions { get; private set; } = new List<RolePermission>();
 }

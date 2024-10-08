@@ -1,5 +1,6 @@
 ﻿using Dedsi.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SolidRockIdentity.Permissions;
 using SolidRockIdentity.Roles;
 using SolidRockIdentity.Users;
 using Volo.Abp.Data;
@@ -11,8 +12,10 @@ public class SolidRockIdentityDbContext(DbContextOptions<SolidRockIdentityDbCont
     : DedsiEfCoreDbContext<SolidRockIdentityDbContext>(options)
 {
     public DbSet<User> Users { get; set; }
+    
     public DbSet<Role> Roles { get; set; }
-    public DbSet<UserRole> UserRoles { get; set; }
+    
+    public DbSet<Permission> Permissions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

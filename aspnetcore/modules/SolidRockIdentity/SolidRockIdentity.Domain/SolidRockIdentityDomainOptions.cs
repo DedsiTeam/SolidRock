@@ -4,13 +4,11 @@ namespace SolidRockIdentity;
 
 public class SolidRockIdentityDomainOptions : DedsiCleanArchitectureDomainOptions
 {
-    public const string ApplicationName = "ProjectName";
+    public const string ApplicationName = "SolidRockIdentity";
     
-    public const string MobileApplicationName = "ProjectName.Mobile";
+    public const string MobileApplicationName = "SolidRockIdentity.Mobile";
     
-    public const string ConnectionStringName = "ProjectNameDB";
+    public const string ConnectionStringName = "SolidRockIdentityDB";
     
-    public const string DbSchemaName  = "ProjectName";
-
-    public const string DbTablePrefix = "ProjectName";
+    public const string DbSchemaName  = "SolidRockIdentity";
 }

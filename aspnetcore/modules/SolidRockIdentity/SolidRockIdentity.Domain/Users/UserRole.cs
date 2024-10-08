@@ -1,18 +1,7 @@
-﻿using Volo.Abp.Domain.Entities;
+﻿namespace SolidRockIdentity.Users;
 
-namespace SolidRockIdentity.Users;
-
-public class UserRole : Entity<Guid>
+public class UserRole
 {
-    public UserRole() { }
-
-    public UserRole(Guid id, Guid userId, Guid roleId, string roleName) : base(id)
-    {
-        UserId = userId;
-        RoleId = roleId;
-        RoleName = roleName;
-    }
-
     public Guid UserId { get; set; }
 
     public Guid RoleId { get; set; }

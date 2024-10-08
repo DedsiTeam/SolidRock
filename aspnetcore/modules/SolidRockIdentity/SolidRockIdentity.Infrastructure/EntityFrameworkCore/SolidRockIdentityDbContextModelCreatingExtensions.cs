@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SolidRockIdentity.Permissions;
 using SolidRockIdentity.Roles;
 using SolidRockIdentity.Users;
 using Volo.Abp;
@@ -22,12 +23,12 @@ public static class SolidRockIdentityDbContextModelCreatingExtensions
             b.ToTable("Roles", SolidRockIdentityDomainOptions.DbSchemaName);
             b.HasKey(a => a.Id);
         });
-
-        builder.Entity<UserRole>(b =>
+        
+        builder.Entity<Permission>(b =>
         {
-            b.ToTable("UserRoles", SolidRockIdentityDomainOptions.DbSchemaName);
+            b.ToTable("Permissions", SolidRockIdentityDomainOptions.DbSchemaName);
             b.HasKey(a => a.Id);
         });
-
+        
     }
 }
