@@ -7,7 +7,7 @@ public class RolePermission
     /// <summary>
     /// 
     /// </summary>
-    public Guid PermissionId { get; private set; }
+    public string PermissionCode { get; private set; }
     
     /// <summary>
     /// 
