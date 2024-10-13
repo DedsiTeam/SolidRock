@@ -22,7 +22,7 @@ public class PermissionController(
     /// <param name="input"></param>
     /// <returns></returns>
     [HttpPost]
-    public Task<bool> CreateAsync(CreateUpdatePermissionDto input)
+    public Task<bool> CreateAsync(PermissionDto input)
     {
         var command = new CreatePermissionCommand(input);
         return mediator.PublishAsync(command);
@@ -35,7 +35,7 @@ public class PermissionController(
     /// <param name="input"></param>
     /// <returns></returns>
     [HttpPost]
-    public Task<bool> UpdateAsync(Guid id,CreateUpdatePermissionDto input)
+    public Task<bool> UpdateAsync(Guid id,PermissionDto input)
     {
         var command = new UpdatePermissionCommand(id, input);
         return mediator.PublishAsync(command);

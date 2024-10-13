@@ -8,11 +8,11 @@ namespace SolidRockIdentity.Users;
 /// </summary>
 public class User : FullAuditedAggregateRoot<Guid>
 {
-    public User(string remark)
+    public User()
     {
-        Remark = remark;
+        
     }
-
+    
     public User(Guid id,string name, string account, string passWord, string phone, string email, string remark) : base(id)
     {
         ChangeName(name);

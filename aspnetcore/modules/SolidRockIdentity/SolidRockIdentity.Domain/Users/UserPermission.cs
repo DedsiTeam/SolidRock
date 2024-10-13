@@ -1,7 +1,21 @@
-﻿namespace SolidRockIdentity.Users;
+﻿using Volo.Abp;
+
+namespace SolidRockIdentity.Users;
 
 public class UserPermission
 {
+    public UserPermission()
+    {
+        
+    }
+    public UserPermission(Guid userId, string permissionCode, string permissionName, string remark)
+    {
+        UserId = userId;
+        Remark = remark;
+        ChangePermissionCode(permissionCode);
+        ChangePermissionName(permissionName);
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -11,11 +25,21 @@ public class UserPermission
     /// 
     /// </summary>
     public string PermissionCode { get; private set; }
+
+    public void ChangePermissionCode(string newPermissionCode)
+    {
+        PermissionCode = Check.NotNullOrWhiteSpace(newPermissionCode, nameof(newPermissionCode));
+    }
     
     /// <summary>
     /// 
     /// </summary>
     public string PermissionName { get; private set; }
+
+    public void ChangePermissionName(string newPermissionName)
+    {
+        PermissionName = Check.NotNullOrWhiteSpace(newPermissionName, nameof(newPermissionName));
+    }
     
     /// <summary>
     /// 

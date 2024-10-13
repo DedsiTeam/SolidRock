@@ -10,9 +10,9 @@ public class CreatePermissionCommandHandler(IPermissionRepository permissionRepo
     {
         var permission = new Permission(
             GuidGenerator.Create(),
-            command.CreateUpdatePermissionDto.Code,
-            command.CreateUpdatePermissionDto.Name,
-            command.CreateUpdatePermissionDto.Remark
+            command.permission.Code,
+            command.permission.Name,
+            command.permission.Remark
             );
         await permissionRepository.InsertAsync(permission, false, cancellationToken);
 

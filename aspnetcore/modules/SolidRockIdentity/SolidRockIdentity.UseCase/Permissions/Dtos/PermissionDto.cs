@@ -19,21 +19,3 @@ public class PermissionDto : EntityDto<Guid>
     /// </summary>
     public string Remark { get; set; }
 }
-
-public class CreateUpdatePermissionDto
-{
-    /// <summary>
-    /// 
-    /// </summary>
-    public string Code { get; set; }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public string Name { get; set; }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public string Remark { get; set; }
-}
