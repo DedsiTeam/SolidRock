@@ -15,9 +15,9 @@ public class Permission : FullAuditedAggregateRoot<Guid>
 
     public Permission(Guid id, string code, string name, string remark) : base(id)
     {
-        Code = code;
-        Name = name;
-        Remark = remark;
+        ChangeCode(code);
+        ChangeName(name);
+        ChangeRemark(remark);
     }
 
     /// <summary>
