@@ -5,6 +5,6 @@ namespace SolidRockIdentity.Roles.Commands;
 
 public record CreateRoleCommand(RoleDto role) : DedsiCommand<bool>;
 
-public record UpdateRoleCommand(Guid id,RoleDto role) : DedsiCommand<bool>;
+public record UpdateRoleCommand(RoleDto role) : DedsiCommand<bool>;
 
 public record DeleteRoleCommand(Guid id) : DedsiCommand<bool>;

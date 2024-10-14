@@ -3,6 +3,7 @@
 public class UserRole
 {
     public UserRole(){ }
+    
     public UserRole(Guid userId, Guid roleId, string roleName)
     {
         UserId = userId;

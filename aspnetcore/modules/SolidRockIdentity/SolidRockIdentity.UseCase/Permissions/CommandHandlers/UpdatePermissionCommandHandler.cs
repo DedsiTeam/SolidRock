@@ -8,7 +8,7 @@ public class UpdatePermissionCommandHandler(IPermissionRepository permissionRepo
 {
     public override async Task<bool> Handle(UpdatePermissionCommand command, CancellationToken cancellationToken)
     {
-        var permission = await permissionRepository.GetAsync(a => a.Id == command.id, true, cancellationToken);
+        var permission = await permissionRepository.GetAsync(a => a.Id == command.permission.Id, true, cancellationToken);
         
         permission.ChangeCode(command.permission.Code);
         permission.ChangeName(command.permission.Name);

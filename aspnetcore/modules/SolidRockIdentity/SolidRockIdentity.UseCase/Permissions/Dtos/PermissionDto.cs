@@ -2,7 +2,7 @@
 
 namespace SolidRockIdentity.Permissions.Dtos;
 
-public class PermissionDto : EntityDto<Guid>
+public class PermissionDto : EntityDto<Guid?>
 {
     /// <summary>
     /// 

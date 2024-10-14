@@ -8,7 +8,7 @@ public class UpdateRoleCommandHandler(IRoleRepository roleRepository) : DedsiCom
 {
     public override async Task<bool> Handle(UpdateRoleCommand command, CancellationToken cancellationToken)
     {
-        var role = await roleRepository.GetAsync(a => a.Id == command.id, true, cancellationToken);
+        var role = await roleRepository.GetAsync(a => a.Id == command.role.Id, true, cancellationToken);
         role.ChangeName(command.role.Name);
         role.ChangeRemark(command.role.Remark);
         

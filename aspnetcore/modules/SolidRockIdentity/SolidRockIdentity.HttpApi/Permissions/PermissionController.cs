@@ -31,13 +31,12 @@ public class PermissionController(
     /// <summary>
     /// 添加
     /// </summary>
-    /// <param name="id"></param>
     /// <param name="input"></param>
     /// <returns></returns>
     [HttpPost]
-    public Task<bool> UpdateAsync(Guid id,PermissionDto input)
+    public Task<bool> UpdateAsync(PermissionDto input)
     {
-        var command = new UpdatePermissionCommand(id, input);
+        var command = new UpdatePermissionCommand(input);
         return mediator.PublishAsync(command);
     }
 

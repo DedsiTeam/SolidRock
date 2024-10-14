@@ -2,7 +2,7 @@
 
 namespace SolidRockIdentity.Users.Dtos;
 
-public class UserDto : EntityDto<Guid>
+public class UserDto : EntityDto<Guid?>
 {
     public string Name { get; set; }
     
