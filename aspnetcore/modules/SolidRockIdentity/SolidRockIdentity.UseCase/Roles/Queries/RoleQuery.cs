@@ -3,13 +3,12 @@ using Dedsi.EntityFrameworkCore.Queries;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
 using SolidRockIdentity.EntityFrameworkCore;
-using SolidRockIdentity.Repositories.Roles;
 using SolidRockIdentity.Roles.Dtos;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace SolidRockIdentity.Roles.Queries;
 
-public interface IRoleQuery : IDedsiQuery
+public interface IRoleQuery : IDedsiEfCoreQuery
 {
     /// <summary>
     /// 查询
@@ -25,14 +24,12 @@ public interface IRoleQuery : IDedsiQuery
     Task<List<RoleDto>> GetAllAsync();
 }
 
-public class RoleQuery(
-    IDbContextProvider<SolidRockIdentityDbContext> dbContextProvider,
-    IRoleRepository roleRepository)
+public class RoleQuery(IDbContextProvider<SolidRockIdentityDbContext> dbContextProvider)
     : DedsiEfCoreQuery<SolidRockIdentityDbContext>(dbContextProvider), IRoleQuery
 {
     public async Task<RoleDto> GetAsync(Guid id)
     {
-        var entity = await roleRepository.GetAsync(a => a.Id == id);
+        var entity = await GetAsync<Role,Guid>(id);
 
         return entity.Adapt<RoleDto>();
     }

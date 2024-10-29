@@ -6,8 +6,8 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace SolidRockIdentity.Repositories.Permissions;
 
-public interface IPermissionRepository : IDedsiRepository<Permission, Guid>;
+public interface IPermissionRepository : IDedsiCqrsRepository<Permission, Guid>;
 
 public class PermissionRepository(IDbContextProvider<SolidRockIdentityDbContext> dbContextProvider)
-    : DedsiEfCoreRepository<SolidRockIdentityDbContext, Permission, Guid>(dbContextProvider),
+    : DedsiCqrsEfCoreRepository<SolidRockIdentityDbContext, Permission, Guid>(dbContextProvider),
         IPermissionRepository;

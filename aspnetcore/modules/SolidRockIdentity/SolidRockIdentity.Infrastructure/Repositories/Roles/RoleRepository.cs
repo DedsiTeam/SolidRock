@@ -6,8 +6,8 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace SolidRockIdentity.Repositories.Roles;
 
-public interface IRoleRepository : IDedsiRepository<Role, Guid>;
+public interface IRoleRepository : IDedsiCqrsRepository<Role, Guid>;
 
 public class RoleRepository(IDbContextProvider<SolidRockIdentityDbContext> dbContextProvider)
-: DedsiEfCoreRepository<SolidRockIdentityDbContext, Role, Guid>(dbContextProvider),
+: DedsiCqrsEfCoreRepository<SolidRockIdentityDbContext, Role, Guid>(dbContextProvider),
     IRoleRepository;

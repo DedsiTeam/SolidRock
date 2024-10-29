@@ -2,13 +2,12 @@
 using Dedsi.EntityFrameworkCore.Queries;
 using Mapster;
 using SolidRockIdentity.EntityFrameworkCore;
-using SolidRockIdentity.Repositories.Users;
 using SolidRockIdentity.Users.Dtos;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace SolidRockIdentity.Users.Queries;
 
-public interface IUserQuery : IDedsiQuery
+public interface IUserQuery : IDedsiEfCoreQuery
 {
     /// <summary>
     /// Id查询
@@ -18,15 +17,13 @@ public interface IUserQuery : IDedsiQuery
     Task<UserDto> GetUserAsync(Guid id);
 }
 
-public class UserQuery(
-    IUserRepository userRepository,
-    IDbContextProvider<SolidRockIdentityDbContext> dbContextProvider)
+public class UserQuery(IDbContextProvider<SolidRockIdentityDbContext> dbContextProvider)
     : DedsiEfCoreQuery<SolidRockIdentityDbContext>(dbContextProvider), IUserQuery
 {
     /// <inheritdoc />
     public async Task<UserDto> GetUserAsync(Guid id)
     {
-        var user = await userRepository.GetAsync(a => a.Id == id);
+        var user = await GetAsync<User, Guid>(id);
         
         return user.Adapt<UserDto>();
     }

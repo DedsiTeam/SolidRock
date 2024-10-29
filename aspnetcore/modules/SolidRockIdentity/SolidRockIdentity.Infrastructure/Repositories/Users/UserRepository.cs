@@ -6,8 +6,8 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace SolidRockIdentity.Repositories.Users;
 
-public interface IUserRepository : IDedsiRepository<User, Guid>;
+public interface IUserRepository : IDedsiCqrsRepository<User, Guid>;
 
 public class UserRepository(IDbContextProvider<SolidRockIdentityDbContext> dbContextProvider)
-    : DedsiEfCoreRepository<SolidRockIdentityDbContext, User, Guid>(dbContextProvider),
+    : DedsiCqrsEfCoreRepository<SolidRockIdentityDbContext, User, Guid>(dbContextProvider),
         IUserRepository;
